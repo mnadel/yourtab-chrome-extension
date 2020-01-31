@@ -1,13 +1,13 @@
 {
-    "name": "New Tab",
-    "description": "Serve up some content on your new tabs",
+    "name": "Your Tab",
+    "description": "Own your new tabs.",
     "version": "0.1",
     "manifest_version": 2,
     "browser_action": {
         "default_icon": "tab.png"
     },
     "chrome_url_overrides": {
-        "newtab": "newtab.html"
+        "newtab": "yourtab.html"
     },
     "permissions": [
         "tabs",

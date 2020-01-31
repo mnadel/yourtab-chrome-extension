@@ -1,6 +1,6 @@
-# newtab
+# yourtab
 
-A Chrome plugin to load content in your new tabs.
+Own your new tabs: a Chrome plugin to load content in your new tabs.
 
 # Installing
 

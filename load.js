@@ -1,5 +1,5 @@
 window.onload = function () {
-    var frame = document.getElementById("nt-frame");
+    var frame = document.getElementById("your-frame");
     if (frame) {
         frame.src = "https://www.nbcnews.com/";
     }
@@ -7,7 +7,7 @@ window.onload = function () {
 
 // function load_home (e) {
 //     (e || window.event).preventDefault();
-//     var con = document.getElementById("nt-frame");
+//     var con = document.getElementById("your-frame");
 //     var xhr = new XMLHttpRequest();
 
 //     xhr.onreadystatechange = function (e) {
@@ -22,7 +22,7 @@ window.onload = function () {
 // }
 
 // $(document).ready(function() {
-//     var frame = document.getElementById("nt-frame");
+//     var frame = document.getElementById("your-frame");
 
 //     $.get("https://news.yahoo.com/", function (data) {
 //         frame.innerHTML = data;
