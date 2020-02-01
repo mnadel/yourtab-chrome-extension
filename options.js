@@ -1,19 +1,20 @@
-chrome.storage.local.get({
-    url: "https://apnews.com/"
-}, function(items) {
+onOptionsLoad((items) => {
     document.getElementById("options-url").value = items.url;
 });
 
-document.getElementById("options-save").addEventListener("click", function () {
-    var options = {
+document.getElementById("options-save").addEventListener("click", () => {
+    const options = {
         url: document.getElementById("options-url").value
     };
 
-    chrome.storage.local.set(options, function() {
-        var status = document.getElementById("options-status");
-        status.textContent = "Options saved.";
-        setTimeout(function() {
-            status.textContent = "";
+    optionsSave(options, () => {
+        const status = document.getElementById("options-status");
+        const currStatus = status.textContent;
+
+        status.textContent = "Saved!";
+
+        setTimeout(() => {
+            status.textContent = currStatus;
         }, 1000);
     });
 });
