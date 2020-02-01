@@ -10,7 +10,6 @@
         "newtab": "yourtab.html"
     },
     "permissions": [
-        "tabs",
-        "activeTab"
+        "tabs"
     ]
 }
