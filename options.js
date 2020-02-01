@@ -1,4 +1,4 @@
-onOptionsLoad((items) => {
+loadOptions((items) => {
     document.getElementById("options-url").value = items.url;
 });
 
@@ -7,7 +7,7 @@ document.getElementById("options-save").addEventListener("click", () => {
         url: document.getElementById("options-url").value
     };
 
-    optionsSave(options, () => {
+    saveOptions(options, () => {
         const status = document.getElementById("options-status");
         const currStatus = status.textContent;
 

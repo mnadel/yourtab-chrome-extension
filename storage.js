@@ -1,13 +1,15 @@
-const onOptionsLoad = (callback) => {
+const defaultOptionURL = "https://apnews.com/";
+
+const loadOptions = (callback) => {
     chrome.storage.local.get({
-        url: "https://apnews.com/"
+        url: defaultOptionURL
     }, (items) => {
         callback(items);
     });
 };
 
-const optionsSave = (data, callback) => {
+const saveOptions = (data, callback) => {
     chrome.storage.local.set({
-        url: data.url || "https://apnews.com/"
+        url: data.url || defaultOptionURL
     }, callback);
 };
