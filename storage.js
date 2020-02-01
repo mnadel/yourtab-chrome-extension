@@ -13,6 +13,6 @@ const loadOptions = (callback) => {
 const saveOptions = (data, callback) => {
     chrome.storage.local.set({
         url: data.url || defaultOptionURL,
-        showBookmarks: data.showBookmarks
+        showBookmarks: !!data.showBookmarks
     }, callback);
 };
