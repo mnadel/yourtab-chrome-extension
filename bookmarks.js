@@ -12,7 +12,7 @@ const loadBookmarks = (callback) => {
         }
 
         root.children[0].children.forEach((bookmark) => {
-            if (bookmark.url) {
+            if (bookmark.url && bookmark.title) {
                 bookmarks.push(bookmark);
             }
         });
