@@ -14,7 +14,6 @@ iframe {
     padding: 0;
     position: fixed;
     width: 100%;
-    margin-top: 20px;
 }
 
 .bar {
@@ -24,4 +23,8 @@ iframe {
     width: 100%;
     height: 20px;
     text-align: center;
+}
+
+.marks {
+    margin-top: 20px;
 }

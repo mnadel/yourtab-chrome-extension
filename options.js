@@ -1,10 +1,12 @@
 loadOptions((items) => {
     document.getElementById("options-url").value = items.url;
+    document.getElementById("options-show-bookmarks").checked = items.showBookmarks;
 });
 
 document.getElementById("options-save").addEventListener("click", () => {
     const options = {
-        url: document.getElementById("options-url").value
+        url: document.getElementById("options-url").value,
+        showBookmarks: document.getElementById("options-show-bookmarks").checked
     };
 
     saveOptions(options, () => {
