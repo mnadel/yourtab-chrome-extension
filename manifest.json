@@ -3,6 +3,10 @@
     "description": "Own your new tabs.",
     "version": "0.1",
     "manifest_version": 2,
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
     "browser_action": {
         "default_icon": "tab.png"
     },
@@ -10,6 +14,7 @@
         "newtab": "yourtab.html"
     },
     "permissions": [
-        "tabs"
+        "tabs",
+        "storage"
     ]
 }
