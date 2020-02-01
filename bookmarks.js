@@ -11,12 +11,7 @@ const loadBookmarks = (callback) => {
             return bookmarks;
         }
 
-        const primaryBookmarks = root.children[0];
-        if (primaryBookmarks.title !== "Bookmarks") {
-            return bookmarks;
-        }
-
-        primaryBookmarks.children.forEach((bookmark) => {
+        root.children[0].children.forEach((bookmark) => {
             if (bookmark.url) {
                 bookmarks.push(bookmark);
             }
