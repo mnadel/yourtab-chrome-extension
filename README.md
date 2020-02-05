@@ -22,13 +22,14 @@ containing this repo's `manifest.json` file.
 
 To show the weather along with your bookmarks:
 
-1. Create a [DarkSky](https://darksky.net/dev) API token (you get 1k free calls per day).
-2. Enter the lat/lon of your location. If you don't know it offhand, you can [look it up](https://www.latlong.net/).
+1. Create a free [DarkSky](https://darksky.net/dev) API token. You get 1,000 free calls per day.
+1. Enter the lat/lon of your location. If you don't know it offhand, you can [look it up](https://www.latlong.net/).
 
 # Changelog
 
 | Version | Changes |
 | --      | --      |
+| 0.2.1   | Added low/high to weather feed |
 | 0.2     | Added weather feed to bookmark bar |
 | 0.1     | Initial release |
 
