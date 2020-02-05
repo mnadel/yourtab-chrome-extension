@@ -3,6 +3,10 @@ class Weather {
         chrome.runtime.onMessage.addListener(this.handleMessage)
     }
 
+    canRender = (opts) => {
+        return opts.darkSkyKey && opts.weatherLat && opts.weatherLon
+    }
+
     asBookmark = (opts, resp) => {
         const url = `https://darksky.net/forecast/${opts.weatherLat},${opts.weatherLon}`
         const temp = Math.round(resp.temp)

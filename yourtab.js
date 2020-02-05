@@ -19,7 +19,7 @@ window.onload = () => {
                     div.innerHTML += `<a href="${m.url}">${m.title}</a>`
                 })
 
-                if (items.darkSkyKey && items.weatherLat && items.weatherLon) {
+                if (weather.canRender(items)) {
                     weather.sendMessage(items, (items, resp) => {
                         if (div.innerHTML !== "") {
                             div.innerHTML += " | "
