@@ -20,12 +20,12 @@ window.onload = () => {
                 })
 
                 if (items.darkSkyKey && items.weatherLat && items.weatherLon) {
-                    weather.sendMessage(items, (url, description) => {
+                    weather.sendMessage(items, (items, resp) => {
                         if (div.innerHTML !== "") {
                             div.innerHTML += " | "
                         }
 
-                        div.innerHTML += `<a href="${url}">${description}<a/>`
+                        div.innerHTML += weather.asBookmark(items, resp)
                     })
                 }
             })

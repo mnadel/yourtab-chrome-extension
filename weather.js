@@ -3,12 +3,13 @@ class Weather {
         chrome.runtime.onMessage.addListener(this.handleMessage)
     }
 
-    description = (resp) => {
-        return !resp ? "Check Weather" : `${resp.summary} ${Math.round(resp.temp)}&deg; (${Math.round(resp.feelsLike)}&deg;)`
-    }
+    asBookmark = (opts, resp) => {
+        const url = `https://darksky.net/forecast/${opts.weatherLat},${opts.weatherLon}`
+        const temp = Math.round(resp.temp)
+        const feels = Math.round(resp.feelsLike)
+        const desc = !resp ? "Check &deg;F" : `${resp.summary} ${temp}&deg; (${feels}&deg;)`
 
-    humanURL = (opts) => {
-        return `https://darksky.net/forecast/${opts.weatherLat},${opts.weatherLon}`
+        return `<a href="${url}">${desc}</a>`
     }
 
     createMessage = (opts) => {
@@ -22,9 +23,7 @@ class Weather {
 
     sendMessage = (items, callback) => {
         chrome.runtime.sendMessage(this.createMessage(items), (resp) => {
-            const url = weather.humanURL(items)
-            const description = weather.description(resp)
-            callback(url, description)
+            callback(items, resp)
         })
     }
 
