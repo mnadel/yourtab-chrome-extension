@@ -1,10 +1,13 @@
 const defaultOptionURL = "https://apnews.com/";
-const defaultOptionShowBookmarks = true;
 
 const loadOptions = (callback) => {
+    // names of options and their default values
     chrome.storage.local.get({
         url: defaultOptionURL,
-        showBookmarks: defaultOptionShowBookmarks
+        showBookmarks: false,
+        weatherLat: null,
+        weatherLon: null,
+        darkSkyKey: null
     }, (items) => {
         callback(items);
     });
@@ -13,6 +16,9 @@ const loadOptions = (callback) => {
 const saveOptions = (data, callback) => {
     chrome.storage.local.set({
         url: data.url || defaultOptionURL,
-        showBookmarks: !!data.showBookmarks
+        showBookmarks: !!data.showBookmarks,
+        weatherLat: data.weatherLat || null,
+        weatherLon: data.weatherLon || null,
+        darkSkyKey: data.darkSkyKey || null
     }, callback);
 };

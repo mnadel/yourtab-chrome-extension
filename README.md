@@ -18,6 +18,20 @@ optionally shows you your bookmarks.
 In `chrome://extensions`, enable developer mode, select _Load unpacked_ and point Chrome at the directory
 containing this repo's `manifest.json` file.
 
+# Weather
+
+To show the weather along with your bookmarks:
+
+1. Create a [DarkSky](https://darksky.net/dev) API token (you get 1k free calls per day).
+2. Enter the lat/lon of your location. (If you don't know it offhand, you can [look it up](https://www.latlong.net/).
+
+# Changelog
+
+| Version | Changes |
+| --      | --      |
+| 0.2     | Added weather feed to bookmark bar |
+| 0.1     | Initial release |
+
 # Attribution
 
 The structure and CSS were taken from the [MSN](https://chrome.google.com/webstore/detail/msn-homepage/ibflkkanbidceofpmolhpijgminhbmnm) extension. 

@@ -1,7 +1,7 @@
 {
     "name": "Your Tab",
     "description": "Own your new tabs.",
-    "version": "0.1",
+    "version": "0.2",
     "manifest_version": 2,
     "options_ui": {
         "page": "options.html",
@@ -18,6 +18,13 @@
     "permissions": [
         "tabs",
         "storage",
-        "bookmarks"
-    ]
+        "bookmarks",
+        "https://api.darksky.net/*"
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "weather.js"
+        ]
+    }
 }

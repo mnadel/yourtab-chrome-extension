@@ -18,6 +18,26 @@ window.onload = () => {
 
                     div.innerHTML += `<a href="${m.url}">${m.title}</a>`;
                 });
+
+                if (items.darkSkyKey && items.weatherLat && items.weatherLon) {
+                    const message = {
+                        request: "weather",
+                        key: items.darkSkyKey,
+                        lat: items.weatherLat,
+                        lon: items.weatherLon
+                    };
+
+                    chrome.runtime.sendMessage(message, (resp) => {
+                        const url = weatherHumanURL(items);
+                        const description = weatherDescription(resp);
+
+                        if (div.innerHTML !== "") {
+                            div.innerHTML += " | ";
+                        }
+
+                        div.innerHTML += `<a href="${url}">${description}<a/>`;
+                    });
+                }
             });
         } else {
             div.parentNode.removeChild(div);
