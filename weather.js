@@ -1,7 +1,7 @@
 // see https://developer.chrome.com/extensions/messaging
 
 const weatherDescription = (resp) => {
-    return !resp ? "Check Weather" : `${resp.summary} ${Math.round(resp.temp)} (${Math.round(resp.feelsLike)})`;
+    return !resp ? "Check Weather" : `${resp.summary} ${Math.round(resp.temp)}&deg; (${Math.round(resp.feelsLike)}&deg;)`;
 };
 
 const weatherHumanURL = (opts) => {
