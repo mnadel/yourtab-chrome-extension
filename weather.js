@@ -18,7 +18,11 @@ class Weather {
             const low = Math.round(resp.today.low)
             const high = Math.round(resp.today.high)
 
-            desc = `${summary} ${temp}&deg; (${feels}&deg;) ${high}&deg;&rarr;${low}&deg;`
+            if (temp == feels) {
+                desc = `${summary} ${temp}&deg; ${high}&deg;&rarr;${low}&deg;`
+            } else {
+                desc = `${summary} ${temp}&deg; (${feels}&deg;) ${high}&deg;&rarr;${low}&deg;`
+            }
         }
 
         return `<a href="${url}">${desc}</a>`

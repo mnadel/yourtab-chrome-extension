@@ -29,6 +29,7 @@ To show the weather along with your bookmarks:
 
 | Version | Changes |
 | --      | --      |
+| 0.2.2   | Don't show feels like if it's the same as the current temp |
 | 0.2.1   | Added low/high to weather feed |
 | 0.2     | Added weather feed to bookmark bar |
 | 0.1     | Initial release |
