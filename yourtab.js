@@ -11,7 +11,7 @@ window.onload = () => {
             }
 
             bookmarks.load((marks) => {
-                marks.forEach((m) => {
+                marks.filter(m => m.url.startsWith("http")).forEach((m) => {
                     if (div.innerHTML !== "") {
                         div.innerHTML += " | "
                     }
