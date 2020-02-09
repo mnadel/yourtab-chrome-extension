@@ -20,12 +20,15 @@ window.onload = () => {
                 })
 
                 if (weather.canRender(items)) {
-                    weather.sendMessage(items, (items, resp) => {
-                        if (div.innerHTML !== "") {
-                            div.innerHTML += " | "
-                        }
+                    if (div.innerHTML !== "") {
+                        div.innerHTML += " | "
+                    }
 
-                        div.innerHTML += weather.asBookmark(items, resp)
+                    div.innerHTML += '<span id="weathermark">Loading Weather...</span>'
+
+                    weather.sendMessage(items, (items, resp) => {
+                        let wm = document.getElementById("weathermark")
+                        wm.innerHTML = weather.asBookmark(items, resp)
                     })
                 }
             })
