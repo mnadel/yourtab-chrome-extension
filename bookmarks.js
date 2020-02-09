@@ -1,7 +1,7 @@
 class Bookmarks {
     load = (callback) => {
         chrome.bookmarks.getTree((tree) => {
-            let bookmarks = []
+            const bookmarks = []
 
             if (!tree || tree.length === 0) {
                 return bookmarks

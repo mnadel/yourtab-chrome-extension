@@ -1,9 +1,9 @@
 window.onload = () => {
     storage.load((items) => {
-        let frame = document.getElementById("your-content")
+        const frame = document.getElementById("your-content")
         frame.src = items.url
 
-        let div = document.getElementById("your-bookmarks")
+        const div = document.getElementById("your-bookmarks")
 
         if (items.showBookmarks) {
             if (!frame.classList.contains("marks")) {
@@ -13,7 +13,7 @@ window.onload = () => {
             bookmarks.load((marks) => {
                 marks.filter(m => m.url.startsWith("http")).forEach((m) => {
                     if (div.innerHTML !== "") {
-                        div.innerHTML += " | "
+                        div.innerHTML += " &bull; "
                     }
 
                     div.innerHTML += `<a href="${m.url}">${m.title}</a>`
@@ -21,13 +21,13 @@ window.onload = () => {
 
                 if (weather.canRender(items)) {
                     if (div.innerHTML !== "") {
-                        div.innerHTML += " | "
+                        div.innerHTML += " &bull; "
                     }
 
                     div.innerHTML += '<span id="weathermark">Loading Weather...</span>'
 
                     weather.sendMessage(items, (items, resp) => {
-                        let wm = document.getElementById("weathermark")
+                        const wm = document.getElementById("weathermark")
                         wm.innerHTML = weather.asBookmark(items, resp)
                     })
                 }
