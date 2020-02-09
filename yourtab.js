@@ -24,7 +24,7 @@ window.onload = () => {
                         div.innerHTML += " &bull; "
                     }
 
-                    div.innerHTML += '<span id="weathermark">Loading Weather...</span>'
+                    div.innerHTML += '<span id="weathermark"><a href="https://darksky.net/">Loading Weather...</a></span>'
 
                     weather.sendMessage(items, (items, resp) => {
                         const wm = document.getElementById("weathermark")
