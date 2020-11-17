@@ -21,7 +21,7 @@ class Weather {
             if (temp == feels) {
                 desc = `${summary} ${temp}&deg; ${high}&deg;&rarr;${low}&deg;`
             } else {
-                desc = `${summary} ${temp}&deg; (${feels}&deg;) ${high}&deg;&rarr;${low}&deg;`
+                desc = `${summary} ${temp}&deg; (${feels}&deg;) &uarr;${high}&deg; &darr;${low}&deg;`
             }
         }
 
